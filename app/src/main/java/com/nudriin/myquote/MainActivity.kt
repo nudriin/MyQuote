@@ -1,5 +1,6 @@
 package com.nudriin.myquote
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         getRandomQuote()
+
+        binding.btnAllQuotes.setOnClickListener {
+            val intent = Intent(this@MainActivity, ListQuotesActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getRandomQuote() {
